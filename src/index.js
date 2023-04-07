@@ -29,6 +29,9 @@ userInput.addEventListener(
             <p><b>${country.name.official}</b></p></li>`;
             countryList.innerHTML += newCountry;
           });
+          Notiflix.Notify.success(
+            `Hurray! There is ${outcome.length} matches!`
+          );
         }
         if (outcome.length === 1) {
           countryInfo.innerHTML = '';
@@ -42,6 +45,7 @@ userInput.addEventListener(
         <p><b>Languages:</b> ${Object.values(outcome[0].languages).join(
           ', '
         )}</p>`;
+          Notiflix.Notify.success(`Hurray! There is ${outcome.length} match!`);
         }
       })
       .catch(err => {
