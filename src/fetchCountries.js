@@ -1,13 +1,13 @@
-const fetchCountries = name => {
-  return fetch(`https://restcountries.com/v3.1/name/${name}`)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(response.status);
+const fetchCountries = countryName => {
+  return fetch(`https://restcountries.com/v3.1/name/${countryName}`)
+    .then(cb => {
+      if (!cb.ok) {
+        throw new Error(cb.status);
       }
-      return response.json();
+      return cb.json();
     })
-    .then(data => {
-      return data;
+    .then(outcome => {
+      return outcome;
     })
     .catch(console.error);
 };
