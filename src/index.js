@@ -26,14 +26,14 @@ userInput.addEventListener(
           countryList.innerHTML = '';
           [...outcome].forEach(country => {
             let newCountry = `<li style="display: flex; gap: 5px;"><img class="country-flag" width=40 src="${country.flags.svg}" alt="${country.flags.alt}"></img>
-            <p class="country-list__name"><b>${country.name.official}</b></p></li>`;
+            <p><b>${country.name.official}</b></p></li>`;
             countryList.innerHTML += newCountry;
           });
         }
         if (outcome.length === 1) {
           countryInfo.innerHTML = '';
           countryList.innerHTML = '';
-          countryInfo.innerHTML = `<h2 class="country-info__name"><img src="${
+          countryInfo.innerHTML = `<h2><img src="${
             outcome[0].flags.svg
           }" alt="${outcome[0].flags.alt}" width=40></img>
         ${outcome[0].name.official}</h2>
